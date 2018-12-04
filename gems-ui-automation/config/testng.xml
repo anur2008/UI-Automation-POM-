@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Gems Automation Suite" verbose="1" parallel="false" thread-count="1">
+  <test name="Chrome Test Suite">
+  <parameter name="browserName" value="Chrome"></parameter>
+		<classes>
+		<class name="com.gems.testcases.GemsExstngEqptLogTest"/>		 		 
+				</classes>
+  </test> 
+</suite> 
+ 

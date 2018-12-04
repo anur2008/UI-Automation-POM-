@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Chrome Test Suite"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="57.972">
+  <properties />
+  
+  
+            <testcase name="exstngEqptLog" time="57.972" classname="com.gems.testcases.GemsExstngEqptLogTest" />
+      
+</testsuite>

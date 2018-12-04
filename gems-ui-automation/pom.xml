@@ -1,0 +1,156 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>gems-ui-automation</groupId>
+  <artifactId>gems-ui-automation</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>gems-UiAutomation</name>
+  <description>Gems-UI Automation</description>
+  <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<suite>config/testng.xml</suite>
+	<!-- 	<maven.build.timestamp.format>yyyyMMdd-HHmm</maven.build.timestamp.format> -->
+	<!--	<reports.sub.directory>${maven.build.timestamp}</reports.sub.directory> -->
+	<!--	<reports.directory>reports/${reports.sub.directory}</reports.directory> -->
+    	<reports.directory>reports/Gems Automation Reports</reports.directory> 
+		<selenium.version>2.53.1</selenium.version>
+		<java.source.version>1.8</java.source.version>
+		<java.target.version>1.8</java.target.version>
+	</properties> 
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.20.1</version>
+					<configuration>
+						<suiteXmlFiles>
+							<suiteXmlFile>${suite}</suiteXmlFile>
+						</suiteXmlFiles>
+						<properties>
+							<property>
+								<name>usedefaultlisteners</name>
+								<value>false</value>
+							</property>
+							<property>
+								<name>listener</name>
+								<value>org.uncommons.reportng.HTMLReporter,
+									org.uncommons.reportng.JUnitXMLReporter
+									</value>
+							</property>
+						</properties>
+						<systemPropertyVariables>
+							<org.uncommons.reportng.escape-output>false</org.uncommons.reportng.escape-output>
+							<reports.directory>${reports.directory}</reports.directory>
+						</systemPropertyVariables>
+						
+						<systemPropertyVariables>
+							<org.uncommons.reportng.escape-output>false</org.uncommons.reportng.escape-output>
+							<reports.directory>${reports.directory}</reports.directory>
+						</systemPropertyVariables>
+						
+
+						<!-- <workingDirectory>${reports.directory}</workingDirectory> -->
+						<reportsDirectory>${reports.directory}</reportsDirectory>
+					</configuration>
+					<executions>
+						<execution>
+							<phase>test</phase>
+							<goals>
+								<goal>test</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+					<artifactId>maven-clean-plugin</artifactId>
+					<version>2.5</version>
+					<configuration>
+						<filesets>
+							<fileset>
+								<directory>test-output</directory>
+							</fileset>
+						</filesets>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.7.0</version>
+					<configuration>
+						<source>1.8</source>
+						<target>1.8</target>
+					</configuration>
+				</plugin>
+				</plugins>
+				</pluginManagement>
+				</build>
+				<repositories>
+  <repository>
+    <id>jcenter</id>
+    <name>bintray</name>
+    <url>http://jcenter.bintray.com</url>
+  </repository>
+</repositories>
+
+				<dependencies>
+				<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>${selenium.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-remote-driver</artifactId>
+			<version>${selenium.version}</version>
+		</dependency>
+				<dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>3.11</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>3.11</version>
+        </dependency>
+        
+        <dependency>
+			<groupId>com.google.inject</groupId>
+			<artifactId>guice</artifactId>
+			<version>3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>velocity</groupId>
+			<artifactId>velocity</artifactId>
+			<version>1.4</version>
+		</dependency>
+        <dependency>
+			<groupId>org.uncommons</groupId>
+			<artifactId>reportng</artifactId>
+			<version>1.1.4</version>	
+					
+		</dependency>
+		<dependency>
+  <groupId>org.testng</groupId>
+  <artifactId>testng</artifactId>
+  <version>6.11</version>
+</dependency>
+		
+		<dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4.7</version>
+        </dependency>
+        <dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		<dependency>
+	    <groupId>com.relevantcodes</groupId>
+	    <artifactId>extentreports</artifactId>
+	    <version>2.41.2</version>
+	</dependency> 
+        </dependencies>
+</project>
